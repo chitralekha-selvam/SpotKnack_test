@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 500px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#f2f2f2;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  padding-left: 40px;
+}
+
+.maincontent
+{
+	margin-left:300px;
+}
+.maincontent li
+{
+	display: inline;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 450px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.btn_add {
+  background-color:lightgreen; 
+  border: none; 
+  color: white; 
+  padding: 12px 16px;
+  font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 45%;
+}
+
+
+.btn_add:hover {
+  background-color:Green;
+}
+
+img.iconimage
+{
+	border-radius: 50%;
+}
+
+.allcusine
+{
+	border:2px solid #f2f2f2;
+	border-radius: 15px;
+}
+
+.maincontent
+{
+	width:800px;
+	padding-bottom: 70px;
+}
+.sidecontent
+{
+	padding-left: 40px;
+}
+#mealplan
+{
+	 margin: 0 auto;
+  max-width: 1500px;
+  margin-top: 1vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: lightgreen;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px lightgreen;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.payment_master
+{
+	margin-left: 150px;
+	background-color: #f2f2f2;
+	border:1px solid #f2f2f2;
+	border-radius: 10px;
+	padding: 12px;
+}
+
+.countries a:hover
+{
+	color: lightgreen;
+}
+
+.Dinner
+{
+	border-style:dotted;
+	padding: 40px;
+}
+
+.Dinner p
+{
+	text-align: center;
+}
+#bt_1,#bt_2
+{
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+	<div id="mealplan">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <img  src="images/boy_2.png" width="80" height="80"  class="iconimage">
+  <h1 style="color: green">Hello Maciej</h1>
+  <h4 style="color:grey">Your Plan:Free <span class="glyphicon glyphicon-pencil"></span></h4>
+  <button class="btn btn-success">Create new meal  <span class="glyphicon glyphicon-plus"></span></button>
+  <h1 style="color: green">MENU</h1>
+  <a href="#"><span class="glyphicon glyphicon-globe"></span> Overview</a>
+  <a href="#"><span class="glyphicon glyphicon-list-alt"></span> Meals</a>
+  <a href="#"><span class="glyphicon glyphicon-user"></span> Useraccount</a>
+  <a href="#"><span class="glyphicon glyphicon-retweet"></span> Orderhistory</a>
+ <a href="#"> <span class="glyphicon glyphicon-calendar"></span> Calendar</a>
+  <h1 style="color: green">COMMUNITY</h1>
+  <a href="#"><span class="glyphicon glyphicon-list-alt"></span> Reviews</a>
+  <a href="#"><span class="glyphicon glyphicon-user"></span> User Recipies</a>
+ <a href="#"><h1 style="color: green"><span class="glyphicon glyphicon-off"></span> LOGOUT</h1></a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<div class="maincontent" id="first">
+	<form class="form-inline d-flex justify-content md-form form-sm mt=0" >
+		<input  class="form-control form-control-sm ml-3 w-75" type="text" placeholder="search" aria-label="search" >
+	</form>
+	<div class="one" style="float:right">
+	<label class="switch">
+  		<input type="checkbox">
+  		<span class="slider round"></span>
+	</label>
+	<p>Meat</p>
+	</div>
+	<div class="two" style="float:right">
+	<label class="switch">
+	<input type="checkbox">
+  		<span class="slider round"></span>
+	</label>
+	<p>&nbsp&nbspVegan</p>
+	</div>
+	<div class="three" style="float:right">
+	<label class="switch">
+	<input type="checkbox">
+  		<span class="slider round"></span>
+	</label>
+	<p>GluttenFree</p>
+	</div>
+	<h1>Today's options</h1>
+	<div class="buttons" style="align-content: left">
+	<div id="bt_1"><button class="btn btn-success">Compare meals</button></div>
+	<div id="bt_2"><button class="btn btn-success">Filter<span class="glyphicon glyphicon-filter"></span></button>
+		<span class="glyphicon glyphicon-option-horizontal"></span>
+	</div>
+
+	</div>
+	<p>Drag & drop meals to your list <span class="glyphicon glyphicon-info-sign"></span></p>
+	<div class="countries" style="display: inline-block;">
+		<ul>
+		<a href="#"><li style="padding-left: 10px;">All cusines</li></a>
+		<a href="#"><li style="padding-left: 10px;">Italian</li></a>
+		<a href="#"><li style="padding-left: 10px;">Greek</li></a>
+		<a href="#"><li style="padding-left: 10px;">Thai</li></a>
+		<a href="#"><li style="padding-left: 10px;">Chinese</li></a>
+		<a href="#"><li style="padding-left: 10px;">Indian</li></a>
+		<a href="#"><li style="padding-left: 10px;">Cajun</li></a>
+		<li style="padding-left: 200px;">sort by:Price<span class="glyphicon glyphicon-chevron-down"></span></li>
+	</ul>
+	
+	</div>
+
+	<div class="allcusine">
+		<div class="first">
+			<span class="glyphicon glyphicon-option-vertical" class="glyphicon glyphicon-option-vertical"></span>
+			<img  src="images/chicken_1.jpg" width="200" height="200" class="iconimage">
+			<div class="content" style="display: inline-block;">
+				<p style="padding-left: 400px">$5,99</p>
+			<h1>Leg piece</h1>
+			<p>672kcal per portion</p>
+
+			<img src="images/hen_2.png" width="60" height="60" class="iconimage" style="border:16px solid green;">
+			</div>
+			<button class="btn_add" style="display: inline-block;"><i class="fa fa-home"></i>+</button>
+		</div>
+	</div>
+
+<br>
+<br>
+
+	<div class="allcusine" >
+		<div class="first">
+			<span class="glyphicon glyphicon-option-vertical"></span>
+			<img  src="images/musli.jpg" width="200" height="200" class="iconimage">
+			<div class="content" style="display: inline-block;">
+				<p style="padding-left: 400px">$4,29</p>
+			<h1>Bio Musli With Peach</h1>
+			<p>400kcal per portion</p>
+			<img src="images/peach.jpg" width="60" height="60" class="iconimage" style="border:16px solid brown;">
+			<img src="images/green.jpg" width="60" height="60" class="iconimage" style="border:16px solid green;">
+			</div>
+			<button class="btn_add" style="display: inline-block;"><i class="fa fa-home"></i>+</button>
+		</div>
+	</div>
+<br>
+<br>
+
+
+	<div class="allcusine" >
+		<div class="first">
+			<span class="glyphicon glyphicon-option-vertical"></span>
+			<img  src="images/sandwich.jpg" width="200" height="200" class="iconimage">
+			<div class="content" style="display: inline-block;">
+				<p style="padding-left: 400px">$3,49</p>
+			<h1>Sandwich</h1>
+			<p>672kcal per portion</p>
+			<img src="images/peach.jpg" width="60" height="60" class="iconimage" style="border:16px solid orange;">
+			<img src="images/bread.jpg" width="60" height="60" class="iconimage" style="border:16px solid brown;">
+			</div>
+			<button class="btn_add" style="display: inline-block;"><i class="fa fa-home"></i>+</button>
+		</div>
+	</div>
+</div>
+
+	<div class="sidecontent" id="second">
+		<h1>Create your meal plan</h1>
+	<p><label for="datechoose">for:</label></p>
+	<input type="date" id="datechoose" name="datechoose">
+	<span class="glyphicon glyphicon-calendar"></span>
+	<div class="breakfast">
+		<br>
+	<p>Breakfast</p>
+	<br>
+	<img src="images/tomato.jpg" width="90" height="90">
+	<p style="display: inline-block;">&nbsp&nbspTomato Omelette</p>
+	<p style="display: inline-block;">&nbsp&nbsp&nbsp$4,99</p>&nbsp&nbsp&nbsp
+	<span  style="display: inline-block;" class="glyphicon glyphicon-remove"></span>
+	<p style="padding-left: 90px;">&nbsp&nbsp&nbsp489 kcal</p>
+	</div>
+	<div class="lunch">
+	<p>Lunch</p>
+	<img src="images/yogurt_1.jpg" width="90" height="90">
+	<p style="display: inline-block;">&nbsp&nbspFruit yogurt</p>
+	<p style="display: inline-block;">&nbsp&nbsp&nbsp&nbsp$5,99</p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span  style="display: inline-block;" class="glyphicon glyphicon-remove"></span>
+	<p style="padding-left: 90px;">&nbsp&nbsp&nbsp300 kcal</p>
+	</div>
+	<hr>
+	<p>Dinner</p>
+	<div class="Dinner">
+		<p> Drop to add </p>
+	</div>
+	<br><br><br><br><br>
+	<div class="payment" id="pfirst">
+		<button class="btn btn-success" style="float:right">Save meals and pay $7.35</button>
+	</div>
+	<br>
+	<br><br>
+	<div class="payment_master" id="psecond" style="display: inline-block;">
+		<img src="images/pay_1.png" width="50" height="30" style="display: inline-block;">
+		<p style="display: inline-block;">Payment</p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-pencil"></span>
+		<p>MasterCard *****4032</p>
+	</div>
+</div>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "500px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html>
+
