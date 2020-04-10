@@ -17,10 +17,10 @@ HOW TO RUN:
     Run the index.html file.
     
 TECHNOLOGIES USED:
-    HTML5,
-    CSS3,
-    Bootstrap,
+    HTML5
+    CSS3
+    Bootstrap
     javascript.
     
 SAMPLE OUTPUT:
-     Inside this path spotknack/output,screenshot will be available.
+     Inside this spotknack/output,screenshot will be available.
